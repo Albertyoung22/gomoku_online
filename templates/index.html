@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>iOS Style Gomoku</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+</head>
+<body>
+    <div class="ios-container">
+        <div class="header">
+            <h1>線上五子棋</h1>
+            <p id="status">等待對手加入...</p>
+        </div>
+        <div class="board-container">
+            <canvas id="gomokuBoard" width="450" height="450"></canvas>
+        </div>
+        <div class="controls">
+            <div class="player-info">
+                <div class="color-indicator black-indicator"></div>
+                <div>
+                    <span>黑子 (先手)</span>
+                    <div id="black-ip" class="ip-text">IP: 等待中...</div>
+                </div>
+            </div>
+            <button id="resetBtn" class="ios-button">重新開始</button>
+            <div class="player-info" style="text-align: right;">
+                <div>
+                    <span>白子 (後手)</span>
+                    <div id="white-ip" class="ip-text">IP: 等待中...</div>
+                </div>
+                <div class="color-indicator white-indicator" style="margin-left: 8px; margin-right: 0;"></div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
